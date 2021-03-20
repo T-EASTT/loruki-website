@@ -1,0 +1,657 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap");
+
+:root {
+  --primary-color: #047aed;
+  --secondary-color: #1c3fa8;
+  --dark-color: #002240;
+  --light-color: #f4f4f4;
+  --success-color: #5cb85c;
+  --error-color: #d9534f;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.hidden {
+  visibility: hidden;
+  height: 0;
+}
+
+/* margins */
+
+.my-1 {
+  margin: 1rem 0;
+}
+
+.my-2 {
+  margin: 1.5rem 0;
+}
+
+.my-3 {
+  margin: 2rem 0;
+}
+
+.my-4 {
+  margin: 3rem 0;
+}
+
+.my-5 {
+  margin: 4rem 0;
+}
+
+.m-1 {
+  margin: 1rem;
+}
+
+.m-2 {
+  margin: 1.5rem;
+}
+
+.m-3 {
+  margin: 2rem;
+}
+
+.m-4 {
+  margin: 3rem;
+}
+
+.m-5 {
+  margin: 4rem;
+}
+
+/* padding */
+.py-1 {
+  padding: 1rem 0;
+}
+
+.py-2 {
+  padding: 1.5rem 0;
+}
+
+.py-3 {
+  padding: 2rem 0;
+}
+
+.py-4 {
+  padding: 3rem 0;
+}
+
+.py-5 {
+  padding: 4rem 0;
+}
+
+.p-1 {
+  padding: 1rem;
+}
+
+.p-2 {
+  padding: 1.5rem;
+}
+
+.p-3 {
+  padding: 2rem;
+}
+
+.p-4 {
+  padding: 3rem;
+}
+
+.p-5 {
+  margin: 4rem;
+}
+
+/* base styles */
+
+body {
+  font-family: "Lato", sans-serif;
+  color: #333;
+  line-height: 1.6;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+h1,
+h2 {
+  font-weight: 300;
+  line-height: 1.2;
+  margin: 10px 0;
+}
+
+p {
+  margin: 10px 0;
+}
+
+img {
+  width: 100%;
+}
+
+/* navbar */
+
+.navbar {
+  color: #fff;
+  height: 70px;
+  background-color: var(--primary-color);
+}
+
+.navbar .flex {
+  justify-content: space-between;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  overflow: auto;
+  /* this was to get rid of the 10px we have set on all our h1s */
+  padding: 0 40px;
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.navbar ul {
+  display: flex;
+}
+
+.navbar a {
+  color: #fff;
+  padding: 10px;
+  margin: 0 5px;
+}
+
+.navbar a:hover {
+  border-bottom: 2px #fff solid;
+  background-color: rgb(255, 162, 0);
+}
+
+/* showcase */
+
+.showcase {
+  height: 40vh;
+  background-color: var(--primary-color);
+  color: #fff;
+  position: relative;
+  /* position relative jus means move it from where it is but keep its mark there ,, n also needed for position absolujte if we wanted to position any children anbsolutely so we set relative here  */
+}
+
+.showcase h1 {
+  font-size: 40px;
+}
+
+.showcase p {
+  margin: 20px 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.showcase .grid {
+  grid-template-columns: 55% 45%;
+  gap: 0;
+  overflow: visible;
+}
+
+.showcase-text {
+  animation: slideInFromLeft 1s ease-in;
+}
+
+.card {
+  background-color: #fff;
+  color: #333;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  margin: 10px;
+}
+
+.showcase-form {
+  position: relative;
+  top: 60px;
+  height: 350px;
+  width: 400px;
+  padding: 40px;
+  z-index: 100;
+  justify-self: end;
+  animation: slideInFromRight 1s ease-in;
+}
+
+.showcase-form .form-control {
+  margin: 30px 0;
+}
+
+.showcase-form input[type="text"],
+.showcase-form input[type="email"] {
+  border: 0;
+  border-bottom: 1px solid #b4becb;
+  width: 100%;
+  padding: 3px;
+  font-size: 16px;
+}
+
+.showcase input:focus {
+  outline: none;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 30px;
+  cursor: pointer;
+  background: var(--primary-color);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+}
+
+.btn-outline {
+  background-color: transparent;
+  border: 1px #fff solid;
+}
+
+.btn:hover {
+  transform: scale(0.98);
+}
+
+.showcase::before,
+.showcase::after {
+  content: "";
+  position: absolute;
+  height: 100px;
+  bottom: -70px;
+  /* minus instead of pushing up from bottom likw ir does with positiv value it will push bottom down so its like doing top but we can start it from the bottom  */
+  right: 0;
+  left: 0;
+  background: #fff;
+  transform: skewY(-3deg);
+  /* sick little effect above  */
+  -webkit-transform: skewY(-3deg);
+  -moz-transform: skewY(-3deg);
+  -ms-transform: skewY(-3deg);
+}
+
+/* backgrounds and colored buttons */
+.bg-primary,
+.btn-primary {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+.bg-primary a,
+.btn-primary a,
+.bg-secondary a,
+.btn-secondary a,
+.bg-dark a,
+.btn-dark a,
+.bg-light a,
+.btn-light a {
+  color: #fff;
+}
+
+.bg-secondary,
+.btn-secondary {
+  background-color: var(--secondary-color);
+  color: #fff;
+}
+
+.bg-dark,
+.btn-dark {
+  background-color: var(--dark-color);
+  color: #fff;
+}
+
+.bg-light,
+.btn-light {
+  background-color: var(--light-color);
+  color: #333;
+}
+
+/* text sizes */
+
+.lead {
+  font-size: 20px;
+}
+
+.sm {
+  font-size: 1rem;
+}
+
+.md {
+  font-size: 2rem;
+}
+
+.lg {
+  font-size: 3rem;
+}
+
+.xl {
+  font-size: 4rem;
+}
+
+/* stats  */
+.stats {
+  padding-top: 100px;
+  animation: slideInFromBottom 1s ease-in;
+}
+
+.grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+  /* cos this is further down in css file it will take priority over our grid class so therefore it will apply this one where we need it makes sense  */
+}
+
+.text-center {
+  text-align: center;
+}
+
+.stats-heading {
+  max-width: 500px;
+  /* max width means it will never be bigger than 500px min width means it will never be smalle than the given amount  */
+  margin: 0 auto;
+  /* use inspector to debug code could se ehere margin was crossed out in styles in inspector 
+  which made me see another margin was over riding it n it was cos i had all mathins n paddings set below of style sheet so they was over riding my styles so i put them to the top of the style sheet and it solved it  */
+}
+
+.stats .grid h3 {
+  font-size: 35px;
+}
+
+.stats .grid p {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* cli */
+.cli .grid {
+  grid-template-columns: repeat(3, 1fr);
+  /* grid affects all main children and it will resize them to what we have set in above  */
+  grid-template-rows: repeat(2, 1fr);
+  /* dont see grid template rows often but it sets the height without any other properties its blank right now the space */
+}
+
+.cli .grid > *:first-child {
+  /* this is targeting the img cos its the first child */
+  grid-column: 1 / span 2;
+  /* this is equivlant to 1 / 3 but we can say start at 1 and span across 2 more columns  */
+  grid-row: 1 / 3;
+  /* code looked fcked before i done the style above to set the rows which is again the height of the img in the grid  */
+}
+
+/* cloud */
+.cloud .grid {
+  grid-template-columns: 4fr 3fr;
+  /* above line is just saying give me two columns going horizontal one colum the size of 4fractions the other column 3frations and that will be our main children inside the grid class  */
+}
+
+/* languages */
+
+.languages .flex {
+  flex-wrap: wrap;
+}
+
+.languages .card {
+  text-align: center;
+  margin: 18px 10px 40px;
+  transition: transform 0.5s;
+}
+
+.languages .card h4 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.languages .card:hover {
+  transform: translateY(-15px);
+  /* a positive number will bring it down wen we hover and a negative number will bring it up */
+}
+
+/* alerts */
+.alert {
+  background-color: var(--light-color);
+  padding: 10px 20px;
+  font-weight: bold;
+  margin: 15px 0;
+}
+
+.alert i {
+  margin-right: 10px;
+}
+
+.alert-success {
+  background-color: var(--success-color);
+  color: #fff;
+}
+
+.alert-error {
+  background-color: var(--error-color);
+  color: #fff;
+}
+
+/* features page */
+.features-head img,
+.docs-head img {
+  width: 200px;
+  justify-self: end;
+}
+
+.features-sub-head img {
+  width: 300px;
+  justify-self: end;
+}
+
+.features-main .card > i {
+  margin-right: 20px;
+}
+
+.features-main .grid {
+  padding: 30px;
+}
+
+.features-main .grid > *:first-child {
+  grid-column: 1 / span 3;
+}
+.features-main .grid > :nth-child(2) {
+  grid-column: 1 / span 2;
+}
+
+/* docs page  */
+
+.docs-main .card a {
+  color: var(--dark-color);
+}
+
+.docs-main h3 {
+  margin: 20px 0;
+}
+
+.docs-main .btn.btn-primary {
+  color: #fff;
+}
+
+.docs-main .grid {
+  grid-template-columns: 1fr 2fr;
+  align-items: flex-start;
+  /* align items will go on y axis like default flexbox */
+}
+
+.docs-main nav li {
+  font-size: 17px;
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+  border-bottom: 1px #ccc solid;
+}
+
+.docs-main a:hover {
+  font-weight: bold;
+}
+
+code,
+pre {
+  background: #333;
+  color: #fff;
+  padding: 10px;
+}
+
+/* text colors*/
+.text-primary {
+  color: var(--primary-color);
+}
+
+.text-secondary {
+  color: var(--secondary-color);
+}
+
+.text-dark {
+  color: var(--dark-color);
+}
+
+.text-light {
+  color: var(--light-color);
+}
+
+/* footer */
+
+.footer .social a {
+  margin: 0 10px;
+}
+
+/* animation */
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+    /* -x moves left positive moves to the right */
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100%);
+    /* -x moves left positive moves to the right */
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromTop {
+  0% {
+    transform: translateY(-100%);
+    /* -x moves left positive moves to the right */
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromBottom {
+  0% {
+    transform: translateY(100%);
+    /* -x moves left positive moves to the right */
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* tablets and under // llook at these widths and other website u made color one for widths cos relaly u dont need loads of media queries // stop forgetting basic shit its lije u over think it get a bit anxious n ur mind goes blank avbout the thing even though u know it before u make any aite plan it all in head kinda how ur gna do it everything thats gna be the same create one class for n use it multiple times like we did in this site  */
+/* also remember try and do as many media queries whilst like tablet size n below cos hardlty have to change them on mobile jus fine tweeks cos everything normally always stacks from tablet sizwe n below  */
+@media (max-width: 768px) {
+  .grid,
+  .showcase .grid,
+  .stats .grid,
+  .cli .grid,
+  .cloud .grid,
+  .features-main .grid,
+  .docs-main .grid {
+    grid-template-columns: 1fr;
+    /* how many colums going left to right */
+    grid-template-rows: 1fr;
+    /* how many rows going top to bottom on the grid  */
+    /* then we use lines to span them were we want on the child elements */
+    /* can set a min height and min width for our columns on the parent using grid auto col or grid auto row */
+    /* can align them jus get these first proper;y n use it anywhere thats two dimenttonal */
+    /* forget grid template columns use lines etc for now */
+    /* full understand grid now kinda  */
+  }
+
+  .showcase {
+    height: auto;
+  }
+
+  .showcase-text {
+    text-align: center;
+    margin-top: 40px;
+    animation: slideInFromTop 1s ease-in;
+  }
+
+  .showcase-form {
+    justify-self: center;
+    /* remember this is a grid item so we can do this  */
+    margin: auto;
+    /* what does margin auto actually do */
+    animation: slideInFromBottom 1s ease-in;
+  }
+
+  .cli .grid > *:first-child {
+    grid-column: 1;
+    grid-row: 1;
+    /* so remember this is setting the size width n height u want each grid item to span */
+  }
+
+  .features-head,
+  .features-sub-head,
+  .docs-head {
+    text-align: center;
+  }
+
+  .features-head img,
+  .features-sub-head img,
+  .docs-head img {
+    justify-self: center;
+  }
+
+  .features-main .grid > *:first-child,
+  .features-main .grid > *:nth-child(2) {
+    grid-column: 1;
+  }
+}
+
+/* mobile  */
+@media (max-width: 500px) {
+  .navbar {
+    height: 110px;
+  }
+
+  .navbar .flex {
+    flex-direction: column;
+  }
+
+  .navbar ul {
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+}
